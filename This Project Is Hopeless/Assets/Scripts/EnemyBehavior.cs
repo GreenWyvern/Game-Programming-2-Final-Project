@@ -29,7 +29,7 @@ public class EnemyBehavior : MonoBehaviour
         }
         else
         {
-
+            StartCoroutine("despawn");
         }
         
     }
@@ -42,6 +42,22 @@ public class EnemyBehavior : MonoBehaviour
             navOb.enabled = true;
             Debug.Log("oof");
             alive = false;
+            this.gameObject.tag = "none";
+        }
+        if (c.gameObject.tag == "death" && !alive)
+        {
+            Destroy(gameObject);
         }
     }
+
+    IEnumerator despawn()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(3f);
+
+            Destroy(gameObject);
+        }
+    }
+
 }
