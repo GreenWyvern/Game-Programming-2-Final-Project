@@ -5,8 +5,13 @@ using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
 {
+
+    public AudioClip deathSound;
     NavMeshAgent navAgent;
     NavMeshObstacle navOb;
+    AudioSource audio;
+    public AudioClip[] sounds;
+    private bool audioPlayed = false;
 
     private bool alive = true;
     GameObject player;
@@ -16,7 +21,9 @@ public class EnemyBehavior : MonoBehaviour
     {
         navAgent = GetComponent<NavMeshAgent>();
         navOb = GetComponent<NavMeshObstacle>();
+        audio = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
+        
         
     }
 
@@ -38,11 +45,16 @@ public class EnemyBehavior : MonoBehaviour
     {
         if (c.gameObject.tag == "sword")
         {
+            if (alive && OutOfBoundsRagdoll.deadtime == false)
+            {
+                KillCount.kcount++;
+            }
             navAgent.enabled = false;
             navOb.enabled = true;
             Debug.Log("oof");
             alive = false;
             this.gameObject.tag = "none";
+            
         }
         if (c.gameObject.tag == "death" && !alive)
         {
@@ -54,8 +66,12 @@ public class EnemyBehavior : MonoBehaviour
     {
         while (true)
         {
+            if (!audioPlayed)
+            {
+                audioPlayed = true;
+                audio.PlayOneShot(sounds[Random.Range(0, sounds.Length)]);
+            }
             yield return new WaitForSeconds(3f);
-
             Destroy(gameObject);
         }
     }

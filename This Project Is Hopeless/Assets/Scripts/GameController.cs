@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour {
         if (Input.GetKeyDown("r"))
         {
             OutOfBoundsRagdoll.deadtime = false;
+            KillCount.kcount = 0;
             SceneManager.LoadScene("MainScene");
         }
 

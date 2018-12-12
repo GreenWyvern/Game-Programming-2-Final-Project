@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 195644745228586512}
   - component: {fileID: 208582041502588044}
   - component: {fileID: 114459012600066588}
+  - component: {fileID: 82370221376597312}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: enemy
@@ -115,6 +116,101 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &82370221376597312
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1797340678599924}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 41860f89b5d0eb947b879b0aa3d2f9cd, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &114459012600066588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,6 +222,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c00dde1533543841abb44784476331a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSound: {fileID: 8300000, guid: 41860f89b5d0eb947b879b0aa3d2f9cd, type: 3}
+  sounds:
+  - {fileID: 8300000, guid: 0b59f29a96d16884b94e318fc78e475b, type: 3}
+  - {fileID: 8300000, guid: f3f6559b982d7a14b8ffa6e3a3251171, type: 3}
+  - {fileID: 8300000, guid: 588e9e4deaf4dcb459e657ff6a66062b, type: 3}
+  - {fileID: 8300000, guid: 2df20ea924c2e76429a51489a3e7dd3b, type: 3}
+  - {fileID: 8300000, guid: 844053f440ee5414483dab9d265a33d7, type: 3}
+  - {fileID: 8300000, guid: 40a7ece789edabd4cb99d5c1feb985e3, type: 3}
+  - {fileID: 8300000, guid: 3d1cf1428a6c8974390f5d135438d93a, type: 3}
+  - {fileID: 8300000, guid: 0d4836350b706204886c714cdcf54cfd, type: 3}
+  - {fileID: 8300000, guid: 71f8d29e3dd4e824ba955341a72088a7, type: 3}
+  - {fileID: 8300000, guid: a21e7513850a60d4c97a1eaa223bb4c8, type: 3}
+  - {fileID: 8300000, guid: 1e3c864da3e7ee2468a2462a0e88cfc8, type: 3}
+  - {fileID: 8300000, guid: 93e00156db5a43341ae485a8dcc07451, type: 3}
+  - {fileID: 8300000, guid: 8af747fa80849954bb2d595baa351e7c, type: 3}
+  - {fileID: 8300000, guid: f416e336dead3b14abe281dbad1a3805, type: 3}
+  - {fileID: 8300000, guid: 72461d442fd59914eb8826224e3bd74b, type: 3}
+  - {fileID: 8300000, guid: 747b84d25412d4148aef5f55961632bb, type: 3}
+  - {fileID: 8300000, guid: 63888ca67f29b9245ac27d2587ea5294, type: 3}
+  - {fileID: 8300000, guid: 71ab5d4787d8eda4dae70259a2836db6, type: 3}
+  - {fileID: 8300000, guid: 8cef688fabdf266429b74ea65c51ab46, type: 3}
+  - {fileID: 8300000, guid: df89e009fe8a3ba4881b2fbbf5f5d6f5, type: 3}
 --- !u!195 &195644745228586512
 NavMeshAgent:
   m_ObjectHideFlags: 1
